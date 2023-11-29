@@ -41,7 +41,31 @@ namespace nombre_magique
             int nbMagique =  rnd.Next(NBMIN, NBMAX + 1);
             int nombre = NBMIN -1;
 
-            int nbVies = 4;
+            for(int nbVies = 4; nbVies > 0; nbVies--)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"nombre de vies restantes: {nbVies}");
+                nombre = DemanderNb(NBMIN, NBMAX);
+                if (nombre < nbMagique)
+                {
+                    Console.WriteLine("le nombre magique est plus grand");
+                }
+                else if (nombre > nbMagique)
+                {
+                    Console.WriteLine("le nombre magique est plus petit");
+                }
+                else
+                {
+                    Console.WriteLine("Bravo, vous avez trouvé le nombre magique");
+                    break;
+                }
+            }
+            if (nombre != nbMagique)
+            {
+                Console.WriteLine($"Vous avez perdu, le nombre magique était : {nbMagique}");
+            }
+
+            /*int nbVies = 4;
 
 
             while ( nbVies > 0)
@@ -59,19 +83,16 @@ namespace nombre_magique
                 } 
                 else
                 {
+                    Console.WriteLine("Bravo, vous avez trouvé le nombre magique");
                     break;
                 }
-                    nbVies--;
+                nbVies--;
                
             }
-            if(nombre == nbMagique)
+            if(nbVies == 0)
             {
-
-            Console.WriteLine("Bravo, vous avez trouvé le nombre magique");
-            } else
-            {
-                Console.WriteLine($"Vous avez perdu, le nombre magique était : {nbMagique}");
-            }
+                Console.WriteLine($"Vous avez perdu, le nombre magique était : {nbMagique}");            
+            }*/
         }
     }
 }
