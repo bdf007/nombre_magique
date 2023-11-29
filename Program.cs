@@ -36,27 +36,42 @@ namespace nombre_magique
         static void Main(string[] args)
         {
             Random rnd = new Random();
-            const int nbMin=1;
-            const int nbMax=10;
-            int nbMagique =  rnd.Next(nbMin, nbMax + 1);
-            Console.WriteLine($"nombre aléatoire: {nbMagique}");
-            int nombre = nbMin -1;
-            while (nombre != nbMagique)
+            const int NBMIN=1;
+            const int NBMAX=10;
+            int nbMagique =  rnd.Next(NBMIN, NBMAX + 1);
+            int nombre = NBMIN -1;
+
+            int nbVies = 4;
+
+
+            while ( nbVies > 0)
             {
-                    nombre = DemanderNb(nbMin, nbMax);
+                Console.WriteLine();
+                Console.WriteLine($"nombre de vies restantes: {nbVies}");
+                nombre = DemanderNb(NBMIN, NBMAX);
                 if (nombre < nbMagique)
                 {
                     Console.WriteLine("le nombre magique est plus grand"); 
-                    Console.WriteLine();
                 }
                 else if (nombre > nbMagique)
                 {
                     Console.WriteLine("le nombre magique est plus petit");
-                    Console.WriteLine();
                 } 
+                else
+                {
+                    break;
+                }
+                    nbVies--;
                
             }
+            if(nombre == nbMagique)
+            {
+
             Console.WriteLine("Bravo, vous avez trouvé le nombre magique");
+            } else
+            {
+                Console.WriteLine($"Vous avez perdu, le nombre magique était : {nbMagique}");
+            }
         }
     }
 }
