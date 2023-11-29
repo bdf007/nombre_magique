@@ -37,9 +37,24 @@ namespace nombre_magique
         {
             const int nbMin=1;
             const int nbMax=10;
-            int nombre = DemanderNb(nbMin, nbMax);
-            Console.WriteLine($"votre nombre est {nombre}");
-
+            const int nbMAgique = 7; 
+            int nombre = nbMin -1;
+            while (nombre != nbMAgique)
+            {
+                    nombre = DemanderNb(nbMin, nbMax);
+                if (nombre < nbMAgique)
+                {
+                    Console.WriteLine("le nombre magique est plus grand"); 
+                    Console.WriteLine();
+                }
+                else if (nombre > nbMAgique)
+                {
+                    Console.WriteLine("le nombre magique est plus petit");
+                    Console.WriteLine();
+                } 
+               
+            }
+            Console.WriteLine("Bravo, vous avez trouvé le nombre magique");
         }
     }
 }
