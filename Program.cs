@@ -35,19 +35,21 @@ namespace nombre_magique
         }
         static void Main(string[] args)
         {
+            Random rnd = new Random();
             const int nbMin=1;
             const int nbMax=10;
-            const int nbMAgique = 7; 
+            int nbMagique =  rnd.Next(nbMin, nbMax + 1);
+            Console.WriteLine($"nombre aléatoire: {nbMagique}");
             int nombre = nbMin -1;
-            while (nombre != nbMAgique)
+            while (nombre != nbMagique)
             {
                     nombre = DemanderNb(nbMin, nbMax);
-                if (nombre < nbMAgique)
+                if (nombre < nbMagique)
                 {
                     Console.WriteLine("le nombre magique est plus grand"); 
                     Console.WriteLine();
                 }
-                else if (nombre > nbMAgique)
+                else if (nombre > nbMagique)
                 {
                     Console.WriteLine("le nombre magique est plus petit");
                     Console.WriteLine();
