@@ -1,2 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using System;
+
+namespace nombre_magique
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("hello world");
+        }
+    }
+}
